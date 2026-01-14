@@ -32,55 +32,78 @@
 }
 
 .why-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-body);
     line-height: 1.8;
 }
 
+/* 2x3 Grid Layout (2 columns, 3 rows) */
 .why-features {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 24px 28px;
+    gap: 16px;
+    padding: 22px 24px;
     background: var(--bg-light);
     border-radius: var(--radius-md);
     border: 1px solid var(--border-light);
     transition: var(--transition-normal);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
 }
 
 .feature-item:hover {
-    transform: translateX(10px);
+    transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: var(--shadow-md);
+    background: var(--bg-white);
 }
 
 .feature-icon {
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-white);
+    background: rgba(232, 90, 51, 0.1);
     border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
+    color: var(--accent);
+}
+
+.feature-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent);
 }
 
 .feature-title {
     font-family: var(--font-primary);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text-dark);
+    line-height: 1.3;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .why-content {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -89,16 +112,35 @@
     .why-text {
         text-align: center;
     }
+
+    .why-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .why-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .why-features {
+        grid-template-columns: 1fr;
+    }
+
     .feature-item {
-        padding: 18px 20px;
+        padding: 16px 18px;
     }
 
     .feature-icon {
         width: 40px;
         height: 40px;
-        font-size: 1.2rem;
+        min-width: 40px;
+    }
+
+    .feature-icon svg {
+        width: 20px;
+        height: 20px;
     }
 }
