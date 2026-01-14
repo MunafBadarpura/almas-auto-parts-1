@@ -1,5 +1,5 @@
 .hero {
-    min-height: 100vh;
+    min-height: min(100vh, 900px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,5 +158,20 @@
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* Large screens / zoomed out */
+@media (min-width: 1600px) {
+    .hero {
+        padding: 100px 20px 50px;
+    }
+
+    .hero-container {
+        max-width: 1600px;
+    }
+
+    .hero-image {
+        height: 220px;
     }
 }
