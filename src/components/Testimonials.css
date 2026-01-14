@@ -1,0 +1,126 @@
+.testimonials {
+    padding: 80px 0;
+    background: var(--primary);
+    overflow: hidden;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: var(--radius-xl);
+    margin-bottom: 20px;
+}
+
+.testimonials .section-title {
+    color: var(--text-light);
+}
+
+.testimonials .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.testimonials-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 30px;
+    animation: marquee 40s linear infinite;
+    width: max-content;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    min-width: 380px;
+    max-width: 380px;
+    transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.testimonial-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.author-name {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.author-company {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-card {
+        min-width: 300px;
+        max-width: 300px;
+        padding: 24px;
+    }
+}
