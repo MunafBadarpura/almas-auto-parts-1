@@ -100,6 +100,16 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p>© {currentYear} Almas Auto Parts. All rights reserved.</p>
+                    <p className="developer-credit">
+                        Designed & Developed by{' '}
+                        <a 
+                            href="https://www.linkedin.com/in/munafbadarpura" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Munaf Badarpura
+                        </a>
+                    </p>
                     <div className="footer-bottom-links">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>

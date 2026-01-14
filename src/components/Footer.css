@@ -130,6 +130,22 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+.developer-credit {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.developer-credit a {
+    color: var(--accent);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.developer-credit a:hover {
+    color: var(--accent-light);
+    text-decoration: underline;
+}
+
 .footer-bottom-links {
     display: flex;
     gap: 30px;
