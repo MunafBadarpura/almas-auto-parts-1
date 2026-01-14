@@ -178,6 +178,10 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-form-wrapper">
+                        <div className="form-header">
+                            <h3 className="form-title">Send Us Message</h3>
+                            <p className="form-subtitle">Fill out the form and we'll get back to you</p>
+                        </div>
                         {isSubmitted ? (
                             <div className="success-message">
                                 <div className="success-icon">

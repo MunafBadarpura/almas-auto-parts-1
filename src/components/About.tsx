@@ -20,7 +20,7 @@ const About = () => {
                             standards of excellence.
                         </p>
                         <a href="#" className="btn btn-outline">
-                            Learn More
+                            Know More
                         </a>
                     </div>
 

@@ -31,8 +31,8 @@ const Hero = () => {
                     <p className="hero-subtitle">
                         Engineering Precision Auto Parts for a Smarter Drive. We manufacture high-quality, durable, and performance-driven automotive components trusted by OEMs and aftermarket leaders worldwide.
                     </p>
-                    <a href="#contact-us" className="hero-cta">
-                        Get in Touch <span className="cta-arrow">→</span>
+                    <a href="#" className="hero-cta">
+                        More About Us <span className="cta-arrow">→</span>
                     </a>
                 </div>
 
