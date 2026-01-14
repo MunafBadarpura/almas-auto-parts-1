@@ -1,3 +1,4 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Brands.css';
 
 interface Brand {
@@ -6,6 +7,8 @@ interface Brand {
 }
 
 const Brands = () => {
+    const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
     const brands: Brand[] = [
         { name: 'Tata Motors', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/200px-Tata_logo.svg.png' },
         { name: 'Mahindra', logo: 'https://images.seeklogo.com/logo-png/41/1/mahindra-suvs-logo-png_seeklogo-410248.png' },
@@ -16,8 +19,8 @@ const Brands = () => {
     ];
 
     return (
-        <section className="brands" id="brands">
-            <div className="brands-wrapper">
+        <section className="brands" id="brands" ref={ref as React.RefObject<HTMLElement>}>
+            <div className={`brands-wrapper scroll-animate-scale ${isVisible ? 'visible' : ''}`}>
                 <div className="container">
                     <div className="brands-header">
                         <h2 className="brands-title">Brands We Serve</h2>
@@ -28,7 +31,10 @@ const Brands = () => {
 
                     <div className="brands-grid">
                         {brands.map((brand, index) => (
-                            <div key={index} className="brand-card">
+                            <div 
+                                key={index} 
+                                className={`brand-card scroll-animate ${isVisible ? 'visible' : ''} delay-${index + 1}`}
+                            >
                                 <img src={brand.logo} alt={brand.name} className="brand-logo" />
                                 <span className="brand-name">{brand.name}</span>
                             </div>

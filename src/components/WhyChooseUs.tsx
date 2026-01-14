@@ -1,3 +1,4 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './WhyChooseUs.css';
 
 interface FeatureItem {
@@ -6,6 +7,8 @@ interface FeatureItem {
 }
 
 const WhyChooseUs = () => {
+    const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
     const features: FeatureItem[] = [
         {
             icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>,
@@ -34,10 +37,10 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <section className="why-choose-us" id="services">
+        <section className="why-choose-us" id="services" ref={ref as React.RefObject<HTMLElement>}>
             <div className="container">
                 <div className="why-content">
-                    <div className="why-text">
+                    <div className={`why-text scroll-animate-left ${isVisible ? 'visible' : ''}`}>
                         <span className="why-badge">Why Us</span>
                         <h2 className="why-title">
                             Why Choose Our<br />
@@ -46,18 +49,14 @@ const WhyChooseUs = () => {
                         <p className="why-description">
                             We combine decades of expertise with cutting-edge technology to deliver
                             automotive components that exceed industry standards.
-                            We combine decades of expertise with cutting-edge technology to deliver automotive components that exceed industry standards.
-                            We combine decades of expertise with cutting-edge technology to deliver automotive components that exceed industry standards.
-
                         </p>
                     </div>
 
-                    <div className="why-features">
+                    <div className={`why-features scroll-animate-right ${isVisible ? 'visible' : ''}`}>
                         {features.map((feature, index) => (
                             <div
                                 key={index}
                                 className="feature-item"
-                                style={{ animationDelay: `${index * 0.1}s` }}
                             >
                                 <div className="feature-icon">{feature.icon}</div>
                                 <span className="feature-title">{feature.title}</span>

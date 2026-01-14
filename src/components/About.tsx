@@ -1,11 +1,14 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './About.css';
 
 const About = () => {
+    const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
     return (
-        <section className="about" id="about-us">
+        <section className="about" id="about-us" ref={ref as React.RefObject<HTMLElement>}>
             <div className="container">
                 <div className="about-content">
-                    <div className="about-text">
+                    <div className={`about-text scroll-animate-left ${isVisible ? 'visible' : ''}`}>
                         <span className="about-badge">About Us</span>
                         <h2 className="about-title">About Almas Auto Parts</h2>
                         <p className="about-description">
@@ -19,12 +22,12 @@ const About = () => {
                             facilities and skilled workforce ensure that every component meets the highest
                             standards of excellence.
                         </p>
-                        <a href="#" className="btn btn-outline">
+                        <a href="#contact-us" className="btn btn-outline">
                             Know More
                         </a>
                     </div>
 
-                    <div className="about-image">
+                    <div className={`about-image scroll-animate-right ${isVisible ? 'visible' : ''}`}>
                         <div className="about-image-wrapper">
                             <img
                                 src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80"

@@ -1,3 +1,4 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Products.css';
 
 interface Product {
@@ -8,6 +9,8 @@ interface Product {
 }
 
 const Products = () => {
+    const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
     const products: Product[] = [
         {
             id: 1,
@@ -36,9 +39,9 @@ const Products = () => {
     ];
 
     return (
-        <section className="products" id="products">
+        <section className="products" id="products" ref={ref as React.RefObject<HTMLElement>}>
             <div className="container">
-                <div className="products-header">
+                <div className={`products-header scroll-animate ${isVisible ? 'visible' : ''}`}>
                     <span className="products-badge">Our Products</span>
                     <h2 className="section-title">Our Products</h2>
                     <p className="section-subtitle">
@@ -51,8 +54,7 @@ const Products = () => {
                     {products.map((product, index) => (
                         <div
                             key={product.id}
-                            className="product-card"
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            className={`product-card scroll-animate-scale ${isVisible ? 'visible' : ''} delay-${index + 1}`}
                         >
                             <div className="product-image">
                                 <img src={product.image} alt={product.name} />
@@ -68,8 +70,8 @@ const Products = () => {
                     ))}
                 </div>
 
-                <div className="products-cta">
-                    <a href="#" className="btn btn-primary">
+                <div className={`products-cta scroll-animate ${isVisible ? 'visible' : ''} delay-5`}>
+                    <a href="#contact-us" className="btn btn-primary">
                         View All Products
                     </a>
                 </div>
