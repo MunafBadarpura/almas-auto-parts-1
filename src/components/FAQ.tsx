@@ -29,7 +29,7 @@ const FAQ = () => {
         {
             id: 4,
             question: 'How can I request a quote?',
-            answer: 'You can request a quote by filling out our contact form, emailing us at AlmasAutoParts@contact.com, or calling our sales team directly. Please provide details about the products you need, quantities, and any specific requirements for accurate pricing.'
+            answer: 'You can request a quote by filling out our contact form, emailing us at AlmasEnterprise@contact.com, or calling our sales team directly. Please provide details about the products you need, quantities, and any specific requirements for accurate pricing.'
         },
         {
             id: 5,

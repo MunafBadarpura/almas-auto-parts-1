@@ -11,7 +11,7 @@ const Testimonials = () => {
     const testimonials: Testimonial[] = [
         {
             id: 1,
-            text: "Reliable quality and timely delivery. Almas Auto Parts is our trusted manufacturing partner.",
+            text: "Reliable quality and timely delivery. Almas Enterprise is our trusted manufacturing partner.",
             author: "John Smith",
             company: "Automotive Distributor"
         },

@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <div className="footer-logo">
                             <span className="logo-text">Almas</span>
-                            <span className="logo-subtext">Auto Parts</span>
+                            <span className="logo-subtext">Enterprise</span>
                         </div>
                         <p className="footer-description">
                             Precision-engineered automotive components built for performance and reliability.
@@ -84,7 +84,7 @@ const Footer = () => {
                                         <polyline points="22,6 12,13 2,6" />
                                     </svg>
                                 </span>
-                                <span>AlmasAutoParts@contact.com</span>
+                                <span>AlmasEnterprise@contact.com</span>
                             </div>
                             <div className="footer-contact-item">
                                 <span className="contact-icon">
@@ -99,7 +99,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {currentYear} Almas Auto Parts. All rights reserved.</p>
+                    <p>© {currentYear} Almas Enterprise. All rights reserved.</p>
                     <p className="developer-credit">
                         Designed & Developed by{' '}
                         <a 

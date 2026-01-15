@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <a href="#" className="navbar-logo">
           <span className="logo-text">Almas</span>
-          <span className="logo-subtext">Auto Parts</span>
+          <span className="logo-subtext">Enterprise</span>
         </a>
 
         <ul className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>

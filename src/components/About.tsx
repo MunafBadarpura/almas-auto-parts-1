@@ -10,9 +10,9 @@ const About = () => {
                 <div className="about-content">
                     <div className={`about-text scroll-animate-left ${isVisible ? 'visible' : ''}`}>
                         <span className="about-badge">About Us</span>
-                        <h2 className="about-title">About Almas Auto Parts</h2>
+                        <h2 className="about-title">About Almas Enterprise</h2>
                         <p className="about-description">
-                            Almas Auto Parts is a trusted automotive components manufacturer delivering
+                            Almas Enterprise is a trusted automotive components manufacturer delivering
                             precision-engineered parts for OEMs and the aftermarket. Our focus on quality,
                             innovation, and reliability drives everything we produce.
                         </p>
@@ -31,7 +31,7 @@ const About = () => {
                         <div className="about-image-wrapper">
                             <img
                                 src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80"
-                                alt="Almas Auto Parts Manufacturing"
+                                alt="Almas Enterprise Manufacturing"
                             />
                         </div>
                         <div className="about-stats-card">

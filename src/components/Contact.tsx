@@ -135,7 +135,7 @@ const Contact = () => {
                                 </div>
                                 <div className="detail-content">
                                     <span className="detail-label">Email</span>
-                                    <span className="detail-value">AlmasAutoParts@contact.com</span>
+                                    <span className="detail-value">AlmasEnterprise@contact.com</span>
                                 </div>
                             </div>
 
@@ -172,7 +172,7 @@ const Contact = () => {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Almas Auto Parts Location"
+                                title="Almas Enterprise Location"
                             ></iframe>
                         </div>
                     </div>
