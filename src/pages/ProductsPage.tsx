@@ -162,15 +162,17 @@ const ProductsPage = () => {
                                             <img src={imageMap[product.image]} alt={product.title} className="product-image" />
                                         </div>
                                         <div className="product-info-content">
-                                            <span className="product-category">{product.category}</span>
+                                            <div className="product-meta-row">
+                                                <span className="product-category">{product.category}</span>
+                                                <span className="product-weight">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                                    </svg>
+                                                    {product.weight}
+                                                </span>
+                                            </div>
                                             <h3 className="product-title">{product.title}</h3>
-                                            <span className="product-weight">
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                                                </svg>
-                                                {product.weight}
-                                            </span>
                                         </div>
                                     </Link>
                                     <div className="product-actions">
