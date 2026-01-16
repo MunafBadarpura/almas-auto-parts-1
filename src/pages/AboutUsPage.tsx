@@ -213,6 +213,92 @@ const AboutUsPage = () => {
                 </div>
             </section>
 
+            {/* Mission & Vision Section */}
+            <section className="mission-vision-section">
+                <div className="container">
+                    {/* Our Mission */}
+                    <div className="mv-card mission-card">
+                        <div className="mv-image-wrapper">
+                            <img 
+                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" 
+                                alt="Our Mission - Innovation and Excellence"
+                            />
+                            <div className="mv-image-overlay">
+                                <div className="mv-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mv-content">
+                            <span className="mv-badge">Our Mission</span>
+                            <h3 className="mv-title">Driving Excellence Forward</h3>
+                            <p className="mv-text">
+                                To deliver precision-engineered automotive components that exceed industry standards, 
+                                empowering our partners with reliable solutions that drive their success.
+                            </p>
+                            <div className="mv-highlights">
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Quality First</span>
+                                </div>
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Customer Focus</span>
+                                </div>
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Our Vision */}
+                    <div className="mv-card vision-card">
+                        <div className="mv-content">
+                            <span className="mv-badge vision-badge">Our Vision</span>
+                            <h3 className="mv-title">Shaping Tomorrow's Mobility</h3>
+                            <p className="mv-text">
+                                To be the global leader in automotive component manufacturing, recognized for 
+                                innovation, sustainability, and unwavering commitment to excellence.
+                            </p>
+                            <div className="mv-highlights">
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Global Reach</span>
+                                </div>
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Sustainability</span>
+                                </div>
+                                <div className="mv-highlight-item">
+                                    <span className="highlight-icon">✓</span>
+                                    <span>Leadership</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mv-image-wrapper">
+                            <img 
+                                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" 
+                                alt="Our Vision - Future of Automotive"
+                            />
+                            <div className="mv-image-overlay">
+                                <div className="mv-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             
 
             {/* Video Popup Modal */}

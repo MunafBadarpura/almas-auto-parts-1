@@ -106,6 +106,160 @@
     font-weight: 500;
 }
 
+/* Mission & Vision Section */
+.mission-vision-section {
+    padding: 80px 0;
+    background: var(--bg-section-alt);
+}
+
+.mv-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--bg-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 40px;
+    transition: var(--transition-normal);
+}
+
+.mv-card:last-child {
+    margin-bottom: 0;
+}
+
+.mv-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+.mv-image-wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 380px;
+    overflow: hidden;
+}
+
+.mv-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mv-card:hover .mv-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.mv-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(11, 60, 109, 0.7) 0%, rgba(11, 94, 215, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.mv-card:hover .mv-image-overlay {
+    opacity: 1;
+}
+
+.mv-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    transition: var(--transition-normal);
+}
+
+.mv-card:hover .mv-icon {
+    transform: scale(1);
+}
+
+.mv-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--primary);
+}
+
+.mv-content {
+    padding: 50px;
+}
+
+.mv-badge {
+    display: inline-block;
+    background: rgba(11, 60, 109, 0.1);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: var(--radius-xl);
+    margin-bottom: 16px;
+}
+
+.vision-badge {
+    background: rgba(11, 94, 215, 0.1);
+    color: var(--accent);
+}
+
+.mv-title {
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.mv-text {
+    font-size: 1rem;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.mv-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mv-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-light);
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: var(--transition-fast);
+}
+
+.mv-highlight-item:hover {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+.mv-highlight-item:hover .highlight-icon {
+    color: var(--text-light);
+}
+
+.highlight-icon {
+    color: var(--primary);
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
 
 /* Journey Section - Video Carousel */
 .journey-section {
@@ -391,6 +545,27 @@
         width: 20px;
         height: 20px;
     }
+    
+    .mv-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .mv-image-wrapper {
+        min-height: 280px;
+    }
+    
+    .mv-content {
+        padding: 36px 28px;
+    }
+    
+    .vision-card .mv-content {
+        order: 2;
+    }
+    
+    .vision-card .mv-image-wrapper {
+        order: 1;
+    }
 }
 
 @media (max-width: 768px) {
@@ -401,6 +576,14 @@
     .about-story-section,
     .journey-section {
         padding: 60px 0;
+    }
+    
+    .mission-vision-section {
+        padding: 60px 0;
+    }
+    
+    .mv-card {
+        margin-bottom: 30px;
     }
     
     .video-card-inner {
@@ -441,5 +624,26 @@
     
     .video-popup {
         max-width: 95%;
+    }
+    
+    .mv-image-wrapper {
+        min-height: 220px;
+    }
+    
+    .mv-content {
+        padding: 28px 20px;
+    }
+    
+    .mv-title {
+        font-size: 1.35rem;
+    }
+    
+    .mv-highlights {
+        gap: 8px;
+    }
+    
+    .mv-highlight-item {
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
 }
