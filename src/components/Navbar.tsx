@@ -24,7 +24,7 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'HOME', href: isHomePage ? '#home' : '/', isRoute: !isHomePage },
-    { label: 'PRODUCTS', href: isHomePage ? '#products' : '/#products', isRoute: !isHomePage },
+    { label: 'PRODUCTS', href: '/products', isRoute: true },
     { label: 'SERVICES', href: isHomePage ? '#services' : '/#services', isRoute: !isHomePage },
     { label: 'ABOUT US', href: '/about-us', isRoute: true },
     { label: 'CONTACT US', href: '/contact-us', isRoute: true },

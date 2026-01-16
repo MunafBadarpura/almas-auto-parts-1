@@ -1,0 +1,147 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Premium Engine Valve",
+      "category": "Engine Parts",
+      "weight": "250g",
+      "tag": "Best Selling",
+      "image": "/src/assets/productImages/1.webp",
+      "description": "High-performance engine valve designed for optimal combustion efficiency. Made from premium-grade steel with precision engineering for durability and reliability.",
+      "features": ["Heat resistant up to 800°C", "Corrosion-proof coating", "OEM compatible", "5-year warranty"],
+      "specifications": {
+        "Material": "Stainless Steel",
+        "Diameter": "35mm",
+        "Length": "110mm",
+        "Finish": "Chrome Plated"
+      },
+      "order": 1
+    },
+    {
+      "id": 2,
+      "title": "Heavy Duty Brake Pad Set",
+      "category": "Brake Components",
+      "weight": "1.2kg",
+      "tag": "Trending",
+      "image": "/src/assets/productImages/2.webp",
+      "description": "Professional-grade brake pads engineered for superior stopping power. Ideal for both city driving and highway performance with minimal noise.",
+      "features": ["Low dust formula", "Quiet operation", "Extended lifespan", "All-weather performance"],
+      "specifications": {
+        "Material": "Ceramic Composite",
+        "Thickness": "12mm",
+        "Width": "150mm",
+        "Compatibility": "Universal Fit"
+      },
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title": "Suspension Coil Spring",
+      "category": "Suspension Parts",
+      "weight": "3.5kg",
+      "tag": "New Arrival",
+      "image": "/src/assets/productImages/3.webp",
+      "description": "Heavy-duty coil spring designed for enhanced ride comfort and vehicle stability. Perfect for both standard and performance applications.",
+      "features": ["Progressive rate design", "Rust-resistant coating", "Load capacity 500kg", "Easy installation"],
+      "specifications": {
+        "Material": "Chrome Silicon Steel",
+        "Wire Diameter": "14mm",
+        "Free Length": "350mm",
+        "Spring Rate": "250 N/mm"
+      },
+      "order": 3
+    },
+    {
+      "id": 4,
+      "title": "Transmission Gear Assembly",
+      "category": "Transmission Parts",
+      "weight": "2.8kg",
+      "tag": "Best Selling",
+      "image": "/src/assets/productImages/1.webp",
+      "description": "Precision-machined transmission gear assembly for smooth gear shifting and optimal power transfer. Built to OEM specifications.",
+      "features": ["Hardened gear teeth", "Noise reduction technology", "High torque capacity", "Direct fit replacement"],
+      "specifications": {
+        "Material": "Alloy Steel",
+        "Teeth Count": "28",
+        "Module": "2.5",
+        "Hardness": "58-62 HRC"
+      },
+      "order": 4
+    },
+    {
+      "id": 5,
+      "title": "Oil Filter Premium",
+      "category": "Engine Parts",
+      "weight": "350g",
+      "tag": "Trending",
+      "image": "/src/assets/productImages/2.webp",
+      "description": "Advanced filtration technology oil filter that removes 99% of contaminants. Ensures clean oil circulation for engine longevity.",
+      "features": ["99% filtration efficiency", "Anti-drain back valve", "Silicone gasket", "15,000km service life"],
+      "specifications": {
+        "Material": "Synthetic Media",
+        "Height": "95mm",
+        "Outer Diameter": "76mm",
+        "Thread Size": "M20x1.5"
+      },
+      "order": 5
+    },
+    {
+      "id": 6,
+      "title": "Wheel Bearing Kit",
+      "category": "Suspension Parts",
+      "weight": "800g",
+      "tag": "New Arrival",
+      "image": "/src/assets/productImages/3.webp",
+      "description": "Complete wheel bearing kit with all necessary components for a professional installation. Ensures smooth wheel rotation and reduced friction.",
+      "features": ["Pre-greased bearings", "Complete hardware included", "Sealed design", "10-year durability"],
+      "specifications": {
+        "Material": "Chrome Steel",
+        "Inner Diameter": "42mm",
+        "Outer Diameter": "82mm",
+        "Load Rating": "45kN"
+      },
+      "order": 6
+    },
+    {
+      "id": 7,
+      "title": "Clutch Disc Assembly",
+      "category": "Transmission Parts",
+      "weight": "1.5kg",
+      "tag": "Best Selling",
+      "image": "/src/assets/productImages/1.webp",
+      "description": "High-friction clutch disc designed for smooth engagement and maximum power transfer. Suitable for both manual and automated manual transmissions.",
+      "features": ["Organic friction material", "Spring-cushioned hub", "Heat dissipation grooves", "Balanced assembly"],
+      "specifications": {
+        "Material": "Organic Composite",
+        "Diameter": "240mm",
+        "Spline Count": "24",
+        "Torque Capacity": "350Nm"
+      },
+      "order": 7
+    },
+    {
+      "id": 8,
+      "title": "Brake Rotor Disc",
+      "category": "Brake Components",
+      "weight": "4.2kg",
+      "tag": "Trending",
+      "image": "/src/assets/productImages/2.webp",
+      "description": "Ventilated brake rotor with cross-drilled design for superior heat dissipation. Provides consistent braking performance under all conditions.",
+      "features": ["Cross-drilled ventilation", "Anti-rust coating", "Balanced for vibration-free operation", "Track-tested"],
+      "specifications": {
+        "Material": "Cast Iron G3000",
+        "Diameter": "300mm",
+        "Thickness": "28mm",
+        "Vane Count": "42"
+      },
+      "order": 8
+    }
+  ],
+  "categories": [
+    "All",
+    "Engine Parts",
+    "Brake Components",
+    "Suspension Parts",
+    "Transmission Parts"
+  ]
+}
