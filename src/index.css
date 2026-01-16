@@ -8,60 +8,66 @@
 
 /* CSS Custom Properties */
 :root {
-  /* Primary Colors */
-  --primary: #1a2b4a;
-  --primary-light: #2d4a7a;
-  --primary-dark: #0d1520;
-  
-  /* Accent Colors */
-  --accent: #e85a33;
-  --accent-light: #ff6b45;
-  --accent-dark: #c44a28;
-  
-  /* Background Colors */
-  --bg-light: #f8f9fa;
+  /* ===== Brand Colors (Based on Reference) ===== */
+  --primary: #0b3c6d;          /* Deep Reliable Blue */
+  --primary-light: #1e5fa3;
+  --primary-dark: #072a4f;
+
+  --accent: #0b5ed7;           /* CTA / Highlight Blue */
+  --accent-light: #3d8bfd;
+  --accent-dark: #084298;
+
+  /* ===== Backgrounds ===== */
   --bg-white: #ffffff;
-  --bg-dark: #0d1520;
+  --bg-light: #f8fafc;
+  --bg-section-alt: #f1f5f9;
   --bg-card: #ffffff;
-  --bg-section-alt: #f1f3f5;
-  
-  /* Text Colors */
-  --text-dark: #1a1a1a;
+  --bg-dark: #020617;
+
+  /* ===== Text Colors ===== */
+  --text-dark: #0f172a;        /* Headings */
+  --text-body: #334155;        /* Paragraphs */
+  --text-muted: #64748b;       /* Sub text */
   --text-light: #ffffff;
-  --text-muted: #6b7280;
-  --text-body: #4a5568;
-  
-  /* Border Colors */
-  --border-light: #e5e7eb;
-  --border-dark: #2d3748;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-  /* Typography */
+
+  /* ===== Borders ===== */
+  --border-light: #e2e8f0;
+  --border-dark: #1e293b;
+
+  /* ===== Shadows (Soft & Clean) ===== */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(15,23,42,0.08);
+  --shadow-lg: 0 16px 40px rgba(15,23,42,0.12);
+  --shadow-xl: 0 24px 60px rgba(15,23,42,0.14);
+  --shadow-card: 0 12px 32px rgba(15,23,42,0.1);
+  --shadow-glow: 0 0 0 transparent;
+
+  /* ===== Gradients (Very Subtle) ===== */
+  --gradient-primary: linear-gradient(135deg, #0b3c6d 0%, #072a4f 100%);
+  --gradient-accent: linear-gradient(135deg, #0b5ed7 0%, #084298 100%);
+  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+
+  /* ===== Typography ===== */
   --font-primary: 'Outfit', sans-serif;
   --font-secondary: 'Inter', sans-serif;
-  
-  /* Spacing */
-  --section-padding: 100px 0;
-  --container-padding: 0 20px;
+
+  /* ===== Layout ===== */
+  --section-padding: 96px 0;
+  --container-padding: 0 24px;
   --container-max-width: 1280px;
-  
-  /* Transitions */
+
+  /* ===== Motion ===== */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
-  /* Border Radius */
+
+  /* ===== Radius ===== */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --radius-xl: 30px;
+  --radius-xl: 28px;
 }
+
 
 /* Reset & Base Styles */
 *, *::before, *::after {
