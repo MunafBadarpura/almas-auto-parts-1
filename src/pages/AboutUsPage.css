@@ -1,0 +1,445 @@
+/* About Us Page Styles */
+.about-us-page {
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.about-hero {
+    padding: 160px 0 80px;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.about-hero-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.about-hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.about-hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-body);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Story Section */
+.about-story-section {
+    padding: 80px 0;
+    background: var(--bg-white);
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.about-story-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+.about-story-text {
+    font-size: 1rem;
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about-story-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--bg-light);
+    padding: 28px 24px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-light);
+    transition: var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+
+/* Journey Section - Video Carousel */
+.journey-section {
+    padding: 80px 0 100px;
+    background: var(--bg-light);
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.journey-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.journey-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+}
+
+.journey-description {
+    font-size: 1rem;
+    color: var(--text-body);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Video Carousel */
+.video-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-nav-btn:hover:not(:disabled) {
+    background: var(--primary-light);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.carousel-nav-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-nav-btn.prev {
+    left: -24px;
+}
+
+.carousel-nav-btn.next {
+    right: -24px;
+}
+
+.video-carousel {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.video-carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.video-card {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.video-card-inner {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 9/16;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-normal);
+}
+
+.video-card-inner:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.video-card-inner:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-number {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    z-index: 5;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.play-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.play-icon svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 4px;
+}
+
+/* Pagination Dots */
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-light);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.pagination-dot.active {
+    background: var(--primary);
+    width: 32px;
+    border-radius: 6px;
+}
+
+.pagination-dot:hover:not(.active) {
+    background: var(--text-muted);
+}
+
+
+/* Video Popup Modal */
+.video-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+}
+
+.video-popup {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #000;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    z-index: 10;
+}
+
+.popup-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.popup-close-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.popup-video {
+    width: 100%;
+    max-height: 85vh;
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .carousel-nav-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav-btn.next {
+        right: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-story-stats {
+        max-width: 400px;
+    }
+    
+    .carousel-nav-btn {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .carousel-nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 140px 0 60px;
+    }
+    
+    .about-story-section,
+    .journey-section {
+        padding: 60px 0;
+    }
+    
+    .video-card-inner {
+        aspect-ratio: 9/14;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-story-stats {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+    
+    .stat-card {
+        padding: 20px 16px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-nav-btn {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .carousel-nav-btn.prev {
+        left: 5px;
+    }
+    
+    .carousel-nav-btn.next {
+        right: 5px;
+    }
+    
+    .video-card {
+        padding: 0 5px;
+    }
+    
+    .video-popup {
+        max-width: 95%;
+    }
+}
