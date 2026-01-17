@@ -366,13 +366,13 @@
     overflow: hidden;
     cursor: pointer;
     aspect-ratio: 9/16;
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
     transition: var(--transition-normal);
 }
 
 .video-card-inner:hover {
     transform: scale(1.02);
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
 }
 
 .video-card-inner:hover .video-overlay {

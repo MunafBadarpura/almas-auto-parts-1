@@ -106,13 +106,13 @@
     color: var(--text-light);
     border-radius: var(--radius-md);
     transition: var(--transition-normal);
-    box-shadow: 0 4px 15px rgba(232, 90, 51, 0.3);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
 }
 
 .btn-cta:hover {
     background: var(--accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(232, 90, 51, 0.4);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
 }
 
 /* Responsive */

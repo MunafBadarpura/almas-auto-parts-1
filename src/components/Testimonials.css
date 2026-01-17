@@ -6,7 +6,7 @@
 
 .testimonials-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .testimonials-badge {
@@ -19,15 +19,17 @@
     letter-spacing: 2px;
     padding: 8px 16px;
     border-radius: var(--radius-xl);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .testimonials .section-title {
     color: var(--text-light);
+    margin-bottom: 12px;
 }
 
 .testimonials .section-subtitle {
     color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
 }
 
 .testimonials-marquee {

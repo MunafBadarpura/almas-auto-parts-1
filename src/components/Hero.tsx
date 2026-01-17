@@ -29,7 +29,7 @@ const Hero = () => {
                         since <span className="accent">1999.</span>
                     </h1>
                     <p className="hero-subtitle">
-                        Engineering Precision Auto Parts for a Smarter Drive. We manufacture high-quality, durable, and performance-driven automotive components trusted by OEMs and aftermarket leaders worldwide.
+                        Engineering Precision Auto Parts for a Smarter Drive. We manufacture durable, high-performance automotive components trusted by OEMs and aftermarket leaders worldwide.
                     </p>
                     <a href="#" className="hero-cta">
                         More About Us <span className="cta-arrow">→</span>

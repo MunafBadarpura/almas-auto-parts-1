@@ -79,7 +79,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: hidden;
 }
 
 body {
@@ -128,7 +127,6 @@ ul, ol {
   margin: 0 auto;
   padding: var(--container-padding);
   width: 100%;
-  overflow-x: hidden;
 }
 
 /* Section Titles */
@@ -165,13 +163,13 @@ ul, ol {
 .btn-primary {
   background: var(--accent);
   color: var(--text-light);
-  box-shadow: 0 4px 15px rgba(232, 90, 51, 0.3);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
 }
 
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(232, 90, 51, 0.4);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
 }
 
 .btn-secondary {
