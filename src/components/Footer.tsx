@@ -1,8 +1,37 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const location = useLocation();
+
+    const handleHomeClick = (e: React.MouseEvent) => {
+        if (location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const handleProductsClick = (e: React.MouseEvent) => {
+        if (location.pathname === '/products') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const handleAboutClick = (e: React.MouseEvent) => {
+        if (location.pathname === '/about-us') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const handleContactClick = (e: React.MouseEvent) => {
+        if (location.pathname === '/contact-us') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     return (
         <footer className="footer">
@@ -46,11 +75,11 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4 className="footer-title">Quick Links</h4>
                         <ul className="footer-links">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/products">Products</Link></li>
+                            <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
+                            <li><Link to="/products" onClick={handleProductsClick}>Products</Link></li>
                             <li><a href="#services">Services</a></li>
-                            <li><Link to="/about-us">About Us</Link></li>
-                            <li><Link to="/contact-us">Contact Us</Link></li>
+                            <li><Link to="/about-us" onClick={handleAboutClick}>About Us</Link></li>
+                            <li><Link to="/contact-us" onClick={handleContactClick}>Contact Us</Link></li>
                         </ul>
                     </div>
 

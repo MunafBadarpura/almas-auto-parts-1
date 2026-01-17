@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -31,9 +32,9 @@ const Hero = () => {
                     <p className="hero-subtitle">
                         Engineering Precision Auto Parts for a Smarter Drive. We manufacture durable, high-performance automotive components trusted by OEMs and aftermarket leaders worldwide.
                     </p>
-                    <a href="#" className="hero-cta">
+                    <Link to="/about-us" className="hero-cta">
                         More About Us <span className="cta-arrow">→</span>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="hero-images-right">
@@ -55,12 +56,12 @@ const Hero = () => {
             </div>
 
             <div className="hero-buttons">
-                <a href="#products" className="btn btn-primary">
+                <Link to="/products" className="btn btn-primary">
                     Explore Products
-                </a>
-                <a href="#contact-us" className="btn btn-secondary">
+                </Link>
+                <Link to="/contact-us" className="btn btn-secondary">
                     Get in Touch
-                </a>
+                </Link>
             </div>
         </section>
     );

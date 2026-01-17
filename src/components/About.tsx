@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './About.css';
 
@@ -22,9 +23,9 @@ const About = () => {
                             facilities and skilled workforce ensure that every component meets the highest
                             standards of excellence.
                         </p>
-                        <a href="#contact-us" className="btn btn-outline">
+                        <Link to="/about-us" className="btn btn-outline">
                             Know More
-                        </a>
+                        </Link>
                     </div>
 
                     <div className={`about-image scroll-animate-right ${isVisible ? 'visible' : ''}`}>
