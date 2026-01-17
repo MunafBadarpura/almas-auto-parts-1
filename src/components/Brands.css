@@ -1,6 +1,7 @@
 .brands {
     padding: 80px 0;
     background: var(--bg-light);
+    overflow-x: hidden;
 }
 
 .brands-wrapper {
@@ -11,6 +12,7 @@
     max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .brands-header {
@@ -121,19 +123,23 @@
 }
 
 @media (max-width: 768px) {
+    .brands {
+        padding: 60px 0;
+    }
+
     .brands-wrapper {
-        padding: 50px 24px;
-        margin: 0 16px;
+        padding: 40px 20px;
+        margin: 0 12px;
         border-radius: var(--radius-lg);
     }
 
     .brands-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 12px;
     }
 
     .brand-card {
-        padding: 20px 12px;
+        padding: 16px 12px;
         min-height: 100px;
     }
 
@@ -144,10 +150,26 @@
 
 @media (max-width: 480px) {
     .brands-wrapper {
-        padding: 40px 20px;
+        padding: 32px 16px;
+        margin: 0 8px;
     }
 
     .brands-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .brand-card {
+        padding: 14px 10px;
+        min-height: 90px;
+    }
+
+    .brand-logo {
+        height: 28px;
+        max-width: 80px;
+    }
+
+    .brand-name {
+        font-size: 0.7rem;
     }
 }
