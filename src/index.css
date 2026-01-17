@@ -79,6 +79,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -127,6 +128,7 @@ ul, ol {
   margin: 0 auto;
   padding: var(--container-padding);
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Section Titles */

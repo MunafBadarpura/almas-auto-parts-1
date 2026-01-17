@@ -5,7 +5,7 @@
 
 /* Hero Section */
 .about-hero {
-    padding: 160px 0 80px;
+    padding: 120px 0 80px;
     background: var(--bg-light);
     text-align: center;
 }
@@ -570,7 +570,7 @@
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 140px 0 60px;
+        padding: 120px 0 60px;
     }
     
     .about-story-section,

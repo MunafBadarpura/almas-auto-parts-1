@@ -161,14 +161,17 @@
     }
 
     .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-buttons .btn {
-        min-width: 140px;
+        width: 100%;
+        min-width: auto;
         padding: 14px 24px;
         font-size: 0.9rem;
     }
