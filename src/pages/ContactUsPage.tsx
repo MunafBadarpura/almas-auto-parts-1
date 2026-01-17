@@ -1,12 +1,103 @@
-import { useEffect } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ProductSelect from '../components/ProductSelect';
+import productsData from '../data/products.json';
 import './ContactUsPage.css';
 
+interface FormErrors {
+    name?: string;
+    email?: string;
+    phone?: string;
+}
+
 const ContactUsPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        product: '',
+        message: ''
+    });
+    const [errors, setErrors] = useState<FormErrors>({});
+    const [touched, setTouched] = useState<Record<string, boolean>>({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    // Get product categories from JSON, excluding "All" category for the form
+    const products = productsData.categories.filter(category => category !== 'All');
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const validateField = (name: string, value: string): string => {
+        switch (name) {
+            case 'name':
+                if (!value.trim()) return 'Name is required';
+                if (value.trim().length < 2) return 'Name must be at least 2 characters';
+                return '';
+            case 'email':
+                if (!value.trim()) return 'Email is required';
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) return 'Please enter a valid email';
+                return '';
+            case 'phone':
+                if (!value.trim()) return 'Phone number is required';
+                const phoneRegex = /^[+]?[\d\s-]{10,}$/;
+                if (!phoneRegex.test(value.replace(/\s/g, ''))) return 'Please enter a valid phone number';
+                return '';
+            default:
+                return '';
+        }
+    };
+
+    const validateForm = (): boolean => {
+        const newErrors: FormErrors = {};
+        newErrors.name = validateField('name', formData.name) || undefined;
+        newErrors.email = validateField('email', formData.email) || undefined;
+        newErrors.phone = validateField('phone', formData.phone) || undefined;
+        
+        setErrors(newErrors);
+        return !newErrors.name && !newErrors.email && !newErrors.phone;
+    };
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        setTouched({ name: true, email: true, phone: true });
+        
+        if (validateForm()) {
+            console.log('Form submitted:', formData);
+            setIsSubmitted(true);
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        
+        if (touched[name]) {
+            const error = validateField(name, value);
+            setErrors(prev => ({ ...prev, [name]: error || undefined }));
+        }
+    };
+
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setTouched(prev => ({ ...prev, [name]: true }));
+        const error = validateField(name, value);
+        setErrors(prev => ({ ...prev, [name]: error || undefined }));
+    };
+
+    const handleProductChange = (value: string) => {
+        setFormData({ ...formData, product: value });
+    };
+
+    const handleSendAnother = () => {
+        setFormData({ name: '', email: '', phone: '', product: '', message: '' });
+        setErrors({});
+        setTouched({});
+        setIsSubmitted(false);
+    };
 
     return (
         <div className="contact-us-page">
@@ -86,54 +177,103 @@ const ContactUsPage = () => {
                             <h2 className="form-section-title">Send Us a Message</h2>
                             <p className="form-section-subtitle">Fill out the form below and we'll get back to you shortly.</p>
                             
-                            <form className="contact-page-form">
-                                <div className="form-row">
-                                    <div className="form-group">
-                                        <label htmlFor="firstName">First Name <span className="required">*</span></label>
-                                        <input type="text" id="firstName" placeholder="Enter your first name" required />
+                            {isSubmitted ? (
+                                <div className="success-message">
+                                    <div className="success-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                            <polyline points="22 4 12 14.01 9 11.01" />
+                                        </svg>
                                     </div>
-                                    <div className="form-group">
-                                        <label htmlFor="lastName">Last Name <span className="required">*</span></label>
-                                        <input type="text" id="lastName" placeholder="Enter your last name" required />
-                                    </div>
+                                    <h3 className="success-title">Thank You!</h3>
+                                    <p className="success-text">
+                                        We have received your enquiry. Our team will contact you shortly.
+                                    </p>
+                                    <button 
+                                        type="button" 
+                                        className="btn-send-another"
+                                        onClick={handleSendAnother}
+                                    >
+                                        Send Another
+                                    </button>
                                 </div>
-                                
-                                <div className="form-row">
-                                    <div className="form-group">
+                            ) : (
+                                <form className="contact-page-form" onSubmit={handleSubmit} noValidate>
+                                    <div className={`form-group ${errors.name && touched.name ? 'error' : ''}`}>
+                                        <label htmlFor="name">Full Name <span className="required">*</span></label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            placeholder="Enter your full name"
+                                        />
+                                        {errors.name && touched.name && (
+                                            <span className="error-message">{errors.name}</span>
+                                        )}
+                                    </div>
+
+                                    <div className={`form-group ${errors.email && touched.email ? 'error' : ''}`}>
                                         <label htmlFor="email">Email Address <span className="required">*</span></label>
-                                        <input type="email" id="email" placeholder="Enter your email" required />
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            placeholder="Enter your email"
+                                        />
+                                        {errors.email && touched.email && (
+                                            <span className="error-message">{errors.email}</span>
+                                        )}
                                     </div>
+
+                                    <div className={`form-group ${errors.phone && touched.phone ? 'error' : ''}`}>
+                                        <label htmlFor="phone">Phone Number <span className="required">*</span></label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            placeholder="Enter your phone number"
+                                        />
+                                        {errors.phone && touched.phone && (
+                                            <span className="error-message">{errors.phone}</span>
+                                        )}
+                                    </div>
+
                                     <div className="form-group">
-                                        <label htmlFor="phone">Phone Number</label>
-                                        <input type="tel" id="phone" placeholder="Enter your phone number" />
+                                        <label htmlFor="product">Select Product</label>
+                                        <ProductSelect
+                                            value={formData.product}
+                                            onChange={handleProductChange}
+                                            options={products}
+                                            placeholder="Select a product category"
+                                        />
                                     </div>
-                                </div>
-                                
-                                <div className="form-group">
-                                    <label htmlFor="subject">Subject <span className="required">*</span></label>
-                                    <select id="subject" required>
-                                        <option value="">Select a subject</option>
-                                        <option value="general">General Inquiry</option>
-                                        <option value="products">Product Information</option>
-                                        <option value="quote">Request a Quote</option>
-                                        <option value="support">Technical Support</option>
-                                        <option value="partnership">Business Partnership</option>
-                                    </select>
-                                </div>
-                                
-                                <div className="form-group">
-                                    <label htmlFor="message">Message <span className="required">*</span></label>
-                                    <textarea id="message" rows={5} placeholder="Write your message here..." required></textarea>
-                                </div>
-                                
-                                <button type="submit" className="btn btn-primary submit-btn">
-                                    Send Message
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                    </svg>
-                                </button>
-                            </form>
+
+                                    <div className="form-group">
+                                        <label htmlFor="message">Message</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder="Tell us about your requirements..."
+                                            rows={5}
+                                        ></textarea>
+                                    </div>
+
+                                    <button type="submit" className="btn btn-primary submit-btn">
+                                        Send Message
+                                    </button>
+                                </form>
+                            )}
                         </div>
 
                         {/* Map */}

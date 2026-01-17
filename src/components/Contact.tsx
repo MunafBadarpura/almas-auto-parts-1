@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import './Contact.css';
 import ProductSelect from './ProductSelect';
+import productsData from '../data/products.json';
 
 interface FormErrors {
     name?: string;
@@ -20,16 +21,8 @@ const Contact = () => {
     const [touched, setTouched] = useState<Record<string, boolean>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const products = [
-        'Engine Components',
-        'Transmission Parts',
-        'Suspension Systems',
-        'Brake Components',
-        'Fuel System Parts',
-        'Electrical Components',
-        'Body & Chassis Parts',
-        'Other'
-    ];
+    // Get product categories from JSON, excluding "All" category for the form
+    const products = productsData.categories.filter(category => category !== 'All');
 
     const validateField = (name: string, value: string): string => {
         switch (name) {
