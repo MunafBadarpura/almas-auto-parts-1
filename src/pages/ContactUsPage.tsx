@@ -1,8 +1,6 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ProductSelect from '../components/ProductSelect';
-import productsData from '../data/products.json';
 import './ContactUsPage.css';
 
 interface FormErrors {
@@ -16,15 +14,13 @@ const ContactUsPage = () => {
         name: '',
         email: '',
         phone: '',
-        product: '',
         message: ''
     });
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // Get product categories from JSON, excluding "All" category for the form
-    const products = productsData.categories.filter(category => category !== 'All');
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -88,12 +84,10 @@ const ContactUsPage = () => {
         setErrors(prev => ({ ...prev, [name]: error || undefined }));
     };
 
-    const handleProductChange = (value: string) => {
-        setFormData({ ...formData, product: value });
-    };
+
 
     const handleSendAnother = () => {
-        setFormData({ name: '', email: '', phone: '', product: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
         setErrors({});
         setTouched({});
         setIsSubmitted(false);
@@ -247,15 +241,7 @@ const ContactUsPage = () => {
                                         )}
                                     </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="product">Select Product</label>
-                                        <ProductSelect
-                                            value={formData.product}
-                                            onChange={handleProductChange}
-                                            options={products}
-                                            placeholder="Select a product category"
-                                        />
-                                    </div>
+
 
                                     <div className="form-group">
                                         <label htmlFor="message">Message</label>

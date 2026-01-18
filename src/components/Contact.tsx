@@ -1,7 +1,5 @@
 import { useState, type FormEvent } from 'react';
 import './Contact.css';
-import ProductSelect from './ProductSelect';
-import productsData from '../data/products.json';
 
 interface FormErrors {
     name?: string;
@@ -14,15 +12,13 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
-        product: '',
         message: ''
     });
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // Get product categories from JSON, excluding "All" category for the form
-    const products = productsData.categories.filter(category => category !== 'All');
+
 
     const validateField = (name: string, value: string): string => {
         switch (name) {
@@ -82,12 +78,10 @@ const Contact = () => {
         setErrors(prev => ({ ...prev, [name]: error || undefined }));
     };
 
-    const handleProductChange = (value: string) => {
-        setFormData({ ...formData, product: value });
-    };
+
 
     const handleSendAnother = () => {
-        setFormData({ name: '', email: '', phone: '', product: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
         setErrors({});
         setTouched({});
         setIsSubmitted(false);
@@ -100,10 +94,10 @@ const Contact = () => {
                     <div className="contact-info">
                         <span className="contact-badge">Get in Touch</span>
                         <h2 className="contact-title">Contact Us</h2>
-                        <p className="contact-description">
+                        {/* <p className="contact-description">
                             Have questions about our products or services? We'd love to hear from you.
                             Reach out and our team will respond as soon as possible.
-                        </p>
+                        </p> */}
 
                         <div className="contact-details">
                             <div className="detail-item">
@@ -245,15 +239,7 @@ const Contact = () => {
                                     )}
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="product">Select Product</label>
-                                    <ProductSelect
-                                        value={formData.product}
-                                        onChange={handleProductChange}
-                                        options={products}
-                                        placeholder="Select a product category"
-                                    />
-                                </div>
+
 
                                 <div className="form-group">
                                     <label htmlFor="message">Message</label>
