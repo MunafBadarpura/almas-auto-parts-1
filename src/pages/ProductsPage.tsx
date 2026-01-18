@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -33,9 +33,28 @@ const ProductsPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [sortBy, setSortBy] = useState('order');
+    const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
+    const [sortDropdownOpen, setSortDropdownOpen] = useState(false);
+    const categoryRef = useRef<HTMLDivElement>(null);
+    const sortRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+
+    // Close dropdowns when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (categoryRef.current && !categoryRef.current.contains(event.target as Node)) {
+                setCategoryDropdownOpen(false);
+            }
+            if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+                setSortDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
     const products = productsData.products as unknown as Product[];
@@ -123,23 +142,86 @@ const ProductsPage = () => {
                         </div>
 
                         {/* Category Filter */}
-                        <div className="filter-group">
+                        <div className="filter-group category-filter" ref={categoryRef}>
                             <label>Category:</label>
-                            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-                                {categories.map(category => (
-                                    <option key={category} value={category}>{category}</option>
-                                ))}
-                            </select>
+                            <div className={`custom-select ${categoryDropdownOpen ? 'open' : ''}`}>
+                                <div 
+                                    className="select-trigger"
+                                    onClick={() => setCategoryDropdownOpen(!categoryDropdownOpen)}
+                                >
+                                    <span>{selectedCategory}</span>
+                                    <svg className="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                {categoryDropdownOpen && (
+                                    <div className="select-options">
+                                        {categories.map(category => (
+                                            <div
+                                                key={category}
+                                                className={`select-option ${selectedCategory === category ? 'selected' : ''}`}
+                                                onClick={() => {
+                                                    setSelectedCategory(category);
+                                                    setCategoryDropdownOpen(false);
+                                                }}
+                                            >
+                                                {category}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         {/* Sort */}
-                        <div className="filter-group">
+                        <div className="filter-group" ref={sortRef}>
                             <label>Sort by:</label>
-                            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                                <option value="order">Default</option>
-                                <option value="name-asc">Name (A-Z)</option>
-                                <option value="name-desc">Name (Z-A)</option>
-                            </select>
+                            <div className={`custom-select ${sortDropdownOpen ? 'open' : ''}`}>
+                                <div 
+                                    className="select-trigger"
+                                    onClick={() => setSortDropdownOpen(!sortDropdownOpen)}
+                                >
+                                    <span>
+                                        {sortBy === 'order' ? 'Default' : 
+                                         sortBy === 'name-asc' ? 'Name (A-Z)' : 
+                                         'Name (Z-A)'}
+                                    </span>
+                                    <svg className="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                {sortDropdownOpen && (
+                                    <div className="select-options">
+                                        <div
+                                            className={`select-option ${sortBy === 'order' ? 'selected' : ''}`}
+                                            onClick={() => {
+                                                setSortBy('order');
+                                                setSortDropdownOpen(false);
+                                            }}
+                                        >
+                                            Default
+                                        </div>
+                                        <div
+                                            className={`select-option ${sortBy === 'name-asc' ? 'selected' : ''}`}
+                                            onClick={() => {
+                                                setSortBy('name-asc');
+                                                setSortDropdownOpen(false);
+                                            }}
+                                        >
+                                            Name (A-Z)
+                                        </div>
+                                        <div
+                                            className={`select-option ${sortBy === 'name-desc' ? 'selected' : ''}`}
+                                            onClick={() => {
+                                                setSortBy('name-desc');
+                                                setSortDropdownOpen(false);
+                                            }}
+                                        >
+                                            Name (Z-A)
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
 
