@@ -3,7 +3,6 @@ import './WhatsAppFloat.css';
 const WhatsAppFloat = () => {
     const handleWhatsAppClick = () => {
         const phoneNumber = '918879939789';
-        const message = 'Hello! I am interested in your automotive products and services. I came from your website.';
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
