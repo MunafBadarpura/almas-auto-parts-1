@@ -57,9 +57,9 @@ const Stats = () => {
 
     const stats: StatItem[] = [
         { number: 25, suffix: '+', label: 'Years Experience' },
-        { number: 500, suffix: '+', label: 'Products Manufactured' },
+        { number: 85, suffix: '+', label: 'Unique components manufactured annualy' },
         { number: 100, suffix: '+', label: 'Trusted Clients' },
-        { number: 100, suffix: '%', label: 'Quality Standards' },
+        // { number: 100, suffix: '%', label: 'Quality Standards' },
     ];
 
     return (
@@ -68,7 +68,7 @@ const Stats = () => {
                 <div className={`stats-content scroll-animate ${isVisible ? 'visible' : ''}`}>
                     <h2 className="stats-title">Numbers That Tell Our Story</h2>
                     <p className="stats-description">
-                        Behind every number is our commitment to quality, precision, and customer satisfaction.
+                        Behind every number is our commitment to quality, precision, and client satisfaction.
                     </p>
                 </div>
 

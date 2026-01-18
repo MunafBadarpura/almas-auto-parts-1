@@ -75,7 +75,7 @@ const Footer = () => {
                              </a>
 
                              <a
-                                href="https://api.whatsapp.com/send?phone=918879939789&text=Hello!%20I%20am%20interested%20in%20your%20automotive%20products%20and%20services.%20I%20came%20from%20your%20website."
+                                href="https://api.whatsapp.com/send?phone=918879939789"
                                 className="social-link"
                                 aria-label="WhatsApp"
                                 target="_blank"
