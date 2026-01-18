@@ -129,8 +129,8 @@ const LegalPage = () => {
                                 </p>
                                 <div className="contact-info">
                                     <p><strong>Email:</strong> info@almasenterprise.com</p>
-                                    <p><strong>Phone:</strong> +91 99999 88888</p>
-                                    <p><strong>Address:</strong> Chaapi, Banaskantha, Gujarat – 385511</p>
+                                    <p><strong>Phone:</strong> +91 88799 39789</p>
+                                    <p><strong>Address:</strong> Chaapi, Banaskantha, Gujarat – 385210</p>
                                 </div>
                             </div>
                         </div>
@@ -234,8 +234,8 @@ const LegalPage = () => {
                                 </p>
                                 <div className="contact-info">
                                     <p><strong>Email:</strong> info@almasenterprise.com</p>
-                                    <p><strong>Phone:</strong> +91 99999 88888</p>
-                                    <p><strong>Address:</strong> Chaapi, Banaskantha, Gujarat – 385511</p>
+                                    <p><strong>Phone:</strong> +91 88799 39789</p>
+                                    <p><strong>Address:</strong> Chaapi, Banaskantha, Gujarat – 385210</p>
                                 </div>
                             </div>
                         </div>

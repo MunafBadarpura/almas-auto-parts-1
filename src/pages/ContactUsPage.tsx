@@ -121,7 +121,7 @@ const ContactUsPage = () => {
                             </div>
                             <h3 className="info-card-title">Visit Our Office</h3>
                             <p className="info-card-text">Chaapi, Banaskantha</p>
-                            <p className="info-card-text">Gujarat – 385511</p>
+                            <p className="info-card-text">Gujarat – 385210</p>
                         </div>
 
                         <div className="contact-info-card">
@@ -131,8 +131,8 @@ const ContactUsPage = () => {
                                 </svg>
                             </div>
                             <h3 className="info-card-title">Call Us</h3>
-                            <p className="info-card-text">+91 99999 88888</p>
-                            <p className="info-card-text">+91 88888 77777</p>
+                            <p className="info-card-text">+91 88799 39789</p>
+                            <p className="info-card-text">+91 93134 94303</p>
                         </div>
 
                         <div className="contact-info-card">

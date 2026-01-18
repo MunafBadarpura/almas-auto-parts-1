@@ -109,7 +109,7 @@ const Contact = () => {
                                 </div>
                                 <div className="detail-content">
                                     <span className="detail-label">Address</span>
-                                    <span className="detail-value">Chaapi, Banaskantha, Gujarat – 385511</span>
+                                    <span className="detail-value">Chaapi, Banaskantha, Gujarat – 385210</span>
                                 </div>
                             </div>
 
@@ -134,7 +134,7 @@ const Contact = () => {
                                 </div>
                                 <div className="detail-content">
                                     <span className="detail-label">Phone</span>
-                                    <span className="detail-value">+91 98765 43210</span>
+                                    <span className="detail-value">+91 88799 39789</span>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                             <div className="map-card">
                                 <h4 className="map-card-title">Chaapi, Banaskantha</h4>
                                 <a 
-                                    href="https://www.google.com/maps/search/Chaapi,+Banaskantha,+Gujarat+385511" 
+                                    href="https://www.google.com/maps/search/Chaapi,+Banaskantha,+Gujarat+385210" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="map-link"
