@@ -1,0 +1,171 @@
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.05);
+    animation-play-state: paused;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-8px);
+}
+
+.whatsapp-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(11, 94, 215, 0.3);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.whatsapp-icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent), var(--accent-light));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.whatsapp-float:hover .whatsapp-icon::before {
+    opacity: 1;
+}
+
+.whatsapp-icon svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+    transition: var(--transition-fast);
+}
+
+.whatsapp-float:hover .whatsapp-icon svg {
+    transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    transform: translateY(4px);
+    background: var(--text-dark);
+    color: white;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+    min-width: max-content;
+    z-index: 1001;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    border: 6px solid transparent;
+    border-top-color: var(--text-dark);
+}
+
+/* Pulse animation for attention */
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .whatsapp-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .whatsapp-tooltip {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        bottom: 70px;
+        right: 0;
+    }
+    
+    .whatsapp-tooltip::after {
+        right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+    }
+    
+    .whatsapp-icon {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .whatsapp-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+}
