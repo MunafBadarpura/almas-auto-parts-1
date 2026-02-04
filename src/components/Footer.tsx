@@ -104,12 +104,18 @@ const Footer = () => {
 
                     {/* Products */}
                     <div className="footer-col">
-                        <h4 className="footer-title">Products</h4>
+                        <h4 className="footer-title">Fabrication & Structural Assemblies</h4>
                         <ul className="footer-links">
-                            <li><a href="#">Engine Parts</a></li>
-                            <li><a href="#">Brake Components</a></li>
+                            <li><a>CNC Laser-Cut Components</a></li>
+                            <li><a>Bent & Formed Sheet-Metal</a></li>
+                            <li><a>Welded Sub-Assemblies</a></li>
+                            <li><a>Heavy-Duty Brackets&Frames</a></li>
+                            <li><a>Low-Volume Production Parts</a></li>
+
+
+                            {/* <li><a href="#">Brake Components</a></li>
                             <li><a href="#">Suspension Parts</a></li>
-                            <li><a href="#">Transmission Parts</a></li>
+                            <li><a href="#">Transmission Parts</a></li> */}
                         </ul>
                     </div>
 
