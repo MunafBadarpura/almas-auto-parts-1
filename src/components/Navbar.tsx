@@ -61,7 +61,7 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'HOME', href: '/', isRoute: true, onClick: handleHomeClick },
-    { label: 'PRODUCTS', href: '/products', isRoute: true, onClick: handleProductsClick },
+    // { label: 'PRODUCTS', href: '/products', isRoute: true, onClick: handleProductsClick },
     { label: 'SERVICES', href: isHomePage ? '#services' : '/#services', isRoute: !isHomePage, onClick: () => setIsMobileMenuOpen(false) },
     { label: 'ABOUT US', href: '/about-us', isRoute: true, onClick: handleAboutClick },
     { label: 'CONTACT US', href: '/contact-us', isRoute: true, onClick: handleContactClick },

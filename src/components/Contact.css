@@ -92,7 +92,7 @@
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     position: relative;
-    height: 400px;
+    height: 310px;
 }
 
 .contact-map iframe {

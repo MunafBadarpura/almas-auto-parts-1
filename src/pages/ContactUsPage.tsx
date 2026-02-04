@@ -1,8 +1,6 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ProductSelect from '../components/ProductSelect';
-import productsData from '../data/products.json';
 import './ContactUsPage.css';
 
 interface FormErrors {
@@ -16,15 +14,13 @@ const ContactUsPage = () => {
         name: '',
         email: '',
         phone: '',
-        product: '',
         message: ''
     });
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // Get product categories from JSON, excluding "All" category for the form
-    const products = productsData.categories.filter(category => category !== 'All');
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -88,12 +84,10 @@ const ContactUsPage = () => {
         setErrors(prev => ({ ...prev, [name]: error || undefined }));
     };
 
-    const handleProductChange = (value: string) => {
-        setFormData({ ...formData, product: value });
-    };
+
 
     const handleSendAnother = () => {
-        setFormData({ name: '', email: '', phone: '', product: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', message: '' });
         setErrors({});
         setTouched({});
         setIsSubmitted(false);
@@ -127,7 +121,7 @@ const ContactUsPage = () => {
                             </div>
                             <h3 className="info-card-title">Visit Our Office</h3>
                             <p className="info-card-text">Chaapi, Banaskantha</p>
-                            <p className="info-card-text">Gujarat – 385511</p>
+                            <p className="info-card-text">Gujarat – 385210</p>
                         </div>
 
                         <div className="contact-info-card">
@@ -137,8 +131,8 @@ const ContactUsPage = () => {
                                 </svg>
                             </div>
                             <h3 className="info-card-title">Call Us</h3>
-                            <p className="info-card-text">+91 99999 88888</p>
-                            <p className="info-card-text">+91 88888 77777</p>
+                            <p className="info-card-text">+91 88799 39789</p>
+                            <p className="info-card-text">+91 93134 94303</p>
                         </div>
 
                         <div className="contact-info-card">
@@ -247,15 +241,7 @@ const ContactUsPage = () => {
                                         )}
                                     </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="product">Select Product</label>
-                                        <ProductSelect
-                                            value={formData.product}
-                                            onChange={handleProductChange}
-                                            options={products}
-                                            placeholder="Select a product category"
-                                        />
-                                    </div>
+
 
                                     <div className="form-group">
                                         <label htmlFor="message">Message</label>

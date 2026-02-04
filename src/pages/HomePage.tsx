@@ -3,6 +3,8 @@ import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import About from '../components/About';
 import WhyChooseUs from '../components/WhyChooseUs';
+import ManufacturingCapabilities from '../components/ManufacturingCapabilities';
+import WhoWeWorkWith from '../components/WhoWeWorkWith';
 import Products from '../components/Products';
 import Brands from '../components/Brands';
 import Testimonials from '../components/Testimonials';
@@ -19,9 +21,11 @@ const HomePage = () => {
                 <Stats />
                 <About />
                 <WhyChooseUs />
-                <Products />
-                <Brands />
-                <Testimonials />
+                <ManufacturingCapabilities />
+                <WhoWeWorkWith />
+                {/* <Products /> */}
+                {/* <Brands /> */}
+                {/* <Testimonials /> */}
                 <Contact />
                 <FAQ />
             </main>

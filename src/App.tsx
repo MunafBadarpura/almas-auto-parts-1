@@ -7,6 +7,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/legal" element={<LegalPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <WhatsAppFloat />
       </div>
     </Router>
   );

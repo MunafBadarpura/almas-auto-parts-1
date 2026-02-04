@@ -26,11 +26,11 @@ const Hero = () => {
 
                 <div className="hero-content">
                     <h1 className="hero-title">
-                        In the market<br />
+                        Engineering Precision<br />
                         since <span className="accent">1999.</span>
                     </h1>
                     <p className="hero-subtitle">
-                        Engineering Precision Auto Parts for a Smarter Drive. We manufacture durable, high-performance automotive components trusted by OEMs and aftermarket leaders worldwide.
+                        Almas Enterprise is a contract manufacturing unit specializing in CNC laser cutting and sheet-metal fabrication for automotive and commercial vehicle applications. Operating from a 12,000 sq. ft. facility, we focus on precision, consistency, and scalable production.
                     </p>
                     <Link to="/about-us" className="hero-cta">
                         More About Us <span className="cta-arrow">→</span>
@@ -55,14 +55,14 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="hero-buttons">
+            {/* <div className="hero-buttons">
                 <Link to="/products" className="btn btn-primary">
                     Explore Products
                 </Link>
                 <Link to="/contact-us" className="btn btn-secondary">
                     Get in Touch
                 </Link>
-            </div>
+            </div> */}
         </section>
     );
 };
